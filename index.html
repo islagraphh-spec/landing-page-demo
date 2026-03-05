@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Création de sites web rapides et élégants | Freelance Front-end</title>
+    <meta
+      name="description"
+      content="Freelance front-end : création de landing pages modernes, rapides et élégantes en HTML, CSS et Tailwind. Livraison en 3 à 7 jours."
+    />
+    <meta
+      name="keywords"
+      content="freelance web, landing page, HTML, CSS, Tailwind CSS, création site web, responsive"
+    />
+    <meta name="author" content="Souleyman Web Studio" />
+    <meta property="og:title" content="Votre site web parfait en 3-7 jours" />
+    <meta
+      property="og:description"
+      content="Landing page premium, rapide et orientée conversion pour indépendants et petites équipes."
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://ui-avatars.com/api/?name=Souleyman+Web&amp;background=2563eb&amp;color=ffffff&amp;size=64"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+              display: ["Sora", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+              },
+              accent: {
+                500: "#7c3aed",
+                600: "#6d28d9",
+              },
+            },
+            boxShadow: {
+              glow: "0 22px 50px -20px rgba(59,130,246,0.5)",
+              card: "0 18px 45px -24px rgba(15, 23, 42, 0.28)",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              pulseSoft: {
+                "0%, 100%": { opacity: "0.45", transform: "scale(1)" },
+                "50%": { opacity: "0.8", transform: "scale(1.08)" },
+              },
+              gradientFlow: {
+                "0%, 100%": { "background-position": "0% 50%" },
+                "50%": { "background-position": "100% 50%" },
+              },
+            },
+            animation: {
+              float: "float 7s ease-in-out infinite",
+              pulseSoft: "pulseSoft 8s ease-in-out infinite",
+              gradientFlow: "gradientFlow 8s ease-in-out infinite",
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+  </head>
+
+  <body class="bg-slate-50 font-sans text-slate-900 antialiased selection:bg-brand-100 dark:bg-slate-950 dark:text-slate-100">
+    <div class="pointer-events-none fixed inset-0 -z-20 bg-slate-50 dark:bg-slate-950"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute left-[-6rem] top-[-8rem] h-72 w-72 rounded-full bg-brand-300/35 blur-3xl animate-pulseSoft dark:bg-brand-600/25"></div>
+      <div class="absolute right-[-7rem] top-[20%] h-80 w-80 rounded-full bg-violet-300/35 blur-3xl animate-pulseSoft [animation-delay:900ms] dark:bg-accent-600/25"></div>
+      <div class="absolute bottom-[-8rem] left-[30%] h-72 w-72 rounded-full bg-cyan-300/30 blur-3xl animate-pulseSoft [animation-delay:1800ms] dark:bg-cyan-500/20"></div>
+      <div class="absolute right-[10%] top-[42%] h-40 w-40 rounded-full border border-brand-300/40 animate-[spin_20s_linear_infinite] dark:border-brand-700/40"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70">
+      <nav class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="#accueil" class="group flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-accent-600 text-xs font-extrabold text-white shadow-glow transition group-hover:scale-105">SW</span>
+          <span class="font-display text-sm font-semibold tracking-wide sm:text-base">Souleyman Web Studio</span>
+        </a>
+
+        <div class="hidden items-center gap-7 md:flex">
+          <a href="#accueil" class="text-sm font-medium text-slate-600 transition hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400">Accueil</a>
+          <a href="#services" class="text-sm font-medium text-slate-600 transition hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400">Services</a>
+          <a href="#portfolio" class="text-sm font-medium text-slate-600 transition hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400">Portfolio</a>
+          <a href="#contact" class="text-sm font-medium text-slate-600 transition hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button data-theme-toggle class="hidden rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 sm:inline-flex"></button>
+          <a href="#contact" class="hidden rounded-lg bg-gradient-to-r from-brand-600 to-accent-600 px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02] lg:inline-flex">Audit express</a>
+          <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" class="inline-flex rounded-lg border border-slate-200 bg-white p-2 text-slate-700 md:hidden dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-slate-800 dark:bg-slate-900">
+        <div class="flex flex-col gap-2">
+          <a href="#accueil" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Accueil</a>
+          <a href="#services" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Services</a>
+          <a href="#portfolio" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Portfolio</a>
+          <a href="#contact" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Contact</a>
+          <button data-theme-toggle class="mt-1 rounded-lg border border-slate-200 bg-white px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"></button>
+          <a href="#contact" class="mt-1 rounded-lg bg-gradient-to-r from-brand-600 to-accent-600 px-3 py-2 text-center text-sm font-semibold text-white">Lancer mon projet</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="accueil" class="relative overflow-hidden pb-16 pt-20 sm:pt-24 lg:pb-20 lg:pt-28">
+        <div class="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div class="reveal opacity-0 translate-y-6 transition-all duration-700">
+            <span class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700 dark:border-brand-900 dark:bg-brand-950/40 dark:text-brand-300">
+              Freelance HTML / CSS / Tailwind
+            </span>
+
+            <h1 class="mt-6 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl xl:text-7xl">
+              Votre site web parfait
+              <span class="bg-gradient-to-r from-brand-600 via-indigo-600 to-accent-600 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradientFlow">en 3-7 jours</span>
+            </h1>
+
+            <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+              Je conçois des landing pages haut de gamme, rapides et élégantes pour transformer vos visiteurs en clients, sans complexité technique.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#contact" class="rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02] sm:text-base">
+                Recevoir une proposition
+              </a>
+              <a href="#portfolio" class="rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-brand-500 dark:hover:text-brand-400 sm:text-base">
+                Voir les réalisations
+              </a>
+            </div>
+
+            <div class="mt-10 grid max-w-xl grid-cols-2 gap-4 sm:grid-cols-3">
+              <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <p class="text-xl font-extrabold">3-7 jours</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Délai moyen de livraison</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <p class="text-xl font-extrabold"><span class="counter" data-target="95" data-suffix="+">95</span></p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Performance Lighthouse</p>
+              </div>
+              <div class="col-span-2 rounded-xl border border-slate-200 bg-white p-4 shadow-card sm:col-span-1 dark:border-slate-800 dark:bg-slate-900">
+                <p class="text-xl font-extrabold"><span class="counter" data-target="100" data-suffix="%">100</span> responsive</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Mobile, tablette et desktop</p>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 dark:border-slate-700 dark:bg-slate-900">HTML sémantique</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 dark:border-slate-700 dark:bg-slate-900">Tailwind moderne</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 dark:border-slate-700 dark:bg-slate-900">SEO de base intégré</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 dark:border-slate-700 dark:bg-slate-900">Code propre</span>
+            </div>
+          </div>
+
+          <div class="reveal relative mx-auto w-full max-w-xl opacity-0 translate-y-6 transition-all duration-700 [transition-delay:120ms]">
+            <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-r from-brand-500/30 to-accent-500/30 blur-2xl"></div>
+            <div class="relative overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-2xl shadow-indigo-900/10 dark:border-slate-800 dark:bg-slate-900">
+              <div class="flex items-center gap-2 border-b border-slate-100 px-5 py-4 dark:border-slate-800">
+                <span class="h-2.5 w-2.5 rounded-full bg-rose-400"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                <span class="ml-3 text-xs font-medium text-slate-500 dark:text-slate-400">landing-preview.html</span>
+              </div>
+              <div class="p-5 sm:p-7">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Aperçu de landing page premium" class="h-64 w-full rounded-2xl object-cover transition duration-700 hover:scale-[1.02] sm:h-72" loading="lazy" />
+
+                <div class="mt-5 grid grid-cols-3 gap-3">
+                  <div class="rounded-xl bg-slate-100 p-3 dark:bg-slate-800">
+                    <p class="text-xs font-bold">Hero</p>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">Impact visuel</p>
+                  </div>
+                  <div class="rounded-xl bg-slate-100 p-3 dark:bg-slate-800">
+                    <p class="text-xs font-bold">Preuves</p>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">Confiance</p>
+                  </div>
+                  <div class="rounded-xl bg-slate-100 p-3 dark:bg-slate-800">
+                    <p class="text-xs font-bold">CTA</p>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">Action rapide</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute -left-5 top-16 hidden rounded-xl border border-brand-200 bg-white/95 px-4 py-2 text-xs font-semibold text-brand-700 shadow-card animate-float sm:block dark:border-brand-900 dark:bg-slate-900/90 dark:text-brand-300">
+              Livraison express
+            </div>
+            <div class="absolute -right-4 bottom-14 hidden rounded-xl border border-violet-200 bg-white/95 px-4 py-2 text-xs font-semibold text-violet-700 shadow-card animate-float [animation-delay:900ms] sm:block dark:border-violet-900 dark:bg-slate-900/90 dark:text-violet-300">
+              Score perf 98
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-16 sm:py-20">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="reveal max-w-2xl opacity-0 translate-y-6 transition-all duration-700">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">Services</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Une landing page pensée pour performer</h2>
+          </div>
+
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            <article class="reveal group rounded-2xl border border-slate-200 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6">
+              <div class="inline-flex rounded-xl bg-brand-50 p-3 text-brand-700 dark:bg-brand-950/60 dark:text-brand-300">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
+                </svg>
+              </div>
+              <h3 class="mt-4 text-lg font-bold">Performance maximale</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Structure légère, assets optimisés et temps de chargement réduit.</p>
+            </article>
+
+            <article class="reveal group rounded-2xl border border-slate-200 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 [transition-delay:80ms]">
+              <div class="inline-flex rounded-xl bg-violet-50 p-3 text-violet-700 dark:bg-violet-950/60 dark:text-violet-300">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M8 14h8m-8 4h8" />
+                </svg>
+              </div>
+              <h3 class="mt-4 text-lg font-bold">Design premium</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Direction visuelle moderne, typographies fortes et hiérarchie claire.</p>
+            </article>
+
+            <article class="reveal group rounded-2xl border border-slate-200 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 [transition-delay:160ms]">
+              <div class="inline-flex rounded-xl bg-indigo-50 p-3 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="mt-4 text-lg font-bold">Process transparent</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Brief, maquette, intégration, révisions, livraison finale en continu.</p>
+            </article>
+
+            <article class="reveal group rounded-2xl border border-slate-200 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 [transition-delay:240ms]">
+              <div class="inline-flex rounded-xl bg-cyan-50 p-3 text-cyan-700 dark:bg-cyan-950/60 dark:text-cyan-300">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z" />
+                </svg>
+              </div>
+              <h3 class="mt-4 text-lg font-bold">Livraison rapide</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Version exploitable en quelques jours, ajustements inclus.</p>
+            </article>
+          </div>
+
+          <div class="reveal mt-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Méthode de travail</p>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/70">
+                <p class="text-xs font-bold text-brand-600 dark:text-brand-400">01</p>
+                <p class="mt-1 font-semibold">Cadrage</p>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Objectifs, audience, offre.</p>
+              </div>
+              <div class="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/70">
+                <p class="text-xs font-bold text-brand-600 dark:text-brand-400">02</p>
+                <p class="mt-1 font-semibold">Direction UI</p>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Style, typos, structure visuelle.</p>
+              </div>
+              <div class="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/70">
+                <p class="text-xs font-bold text-brand-600 dark:text-brand-400">03</p>
+                <p class="mt-1 font-semibold">Développement</p>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Intégration responsive Tailwind.</p>
+              </div>
+              <div class="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/70">
+                <p class="text-xs font-bold text-brand-600 dark:text-brand-400">04</p>
+                <p class="mt-1 font-semibold">Livraison</p>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Version finale prête à publier.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="py-16 sm:py-20">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="reveal max-w-2xl opacity-0 translate-y-6 transition-all duration-700">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">Portfolio</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Mockups de landing pages récentes</h2>
+          </div>
+
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="reveal group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Mockup SaaS Analytics" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5">
+                <span class="inline-flex rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-slate-800">SaaS</span>
+                <h3 class="mt-3 text-lg font-bold text-white">Dashboard B2B</h3>
+                <p class="text-sm text-slate-200">Démo produit + génération de leads</p>
+              </div>
+            </article>
+
+            <article class="reveal group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 [transition-delay:70ms]">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Mockup Studio Fitness" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5">
+                <span class="inline-flex rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-slate-800">Coaching</span>
+                <h3 class="mt-3 text-lg font-bold text-white">Studio Fitness</h3>
+                <p class="text-sm text-slate-200">Prise de rendez-vous et offres premium</p>
+              </div>
+            </article>
+
+            <article class="reveal group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 [transition-delay:140ms]">
+              <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Mockup Cabinet Legal" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5">
+                <span class="inline-flex rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-slate-800">Juridique</span>
+                <h3 class="mt-3 text-lg font-bold text-white">Cabinet Legal</h3>
+                <p class="text-sm text-slate-200">Crédibilité, preuves, formulaire qualifié</p>
+              </div>
+            </article>
+
+            <article class="reveal group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 [transition-delay:210ms]">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Mockup Restaurant" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5">
+                <span class="inline-flex rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-slate-800">Restauration</span>
+                <h3 class="mt-3 text-lg font-bold text-white">Maison Sépia</h3>
+                <p class="text-sm text-slate-200">Storytelling visuel et réservation directe</p>
+              </div>
+            </article>
+
+            <article class="reveal group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 [transition-delay:280ms]">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Mockup Personal Brand" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5">
+                <span class="inline-flex rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-slate-800">Personal Brand</span>
+                <h3 class="mt-3 text-lg font-bold text-white">Consultante Growth</h3>
+                <p class="text-sm text-slate-200">Positionnement clair et offres packagées</p>
+              </div>
+            </article>
+
+            <article class="reveal group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 [transition-delay:350ms]">
+              <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Mockup E-commerce" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5">
+                <span class="inline-flex rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-slate-800">E-commerce</span>
+                <h3 class="mt-3 text-lg font-bold text-white">Boutique Niche</h3>
+                <p class="text-sm text-slate-200">Produit phare, social proof et CTA forts</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-20">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="reveal max-w-2xl opacity-0 translate-y-6 transition-all duration-700">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">Témoignages</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Ce que mes clients disent</h2>
+          </div>
+
+          <div class="reveal relative mt-12 opacity-0 translate-y-6 transition-all duration-700">
+            <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900">
+              <div id="testimonial-track" class="flex transition-transform duration-700 ease-out">
+                <article class="min-w-full p-7 sm:p-10">
+                  <div class="flex items-center gap-1 text-amber-400">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-700 dark:text-slate-200">
+                    “Une page livrée en 5 jours, avec un rendu premium sur mobile et desktop. On a vu une vraie hausse des demandes de contact dès la première semaine.”
+                  </p>
+                  <div class="mt-6 flex items-center gap-3">
+                    <img src="https://i.pravatar.cc/80?img=32" alt="Photo de Claire L." class="h-10 w-10 rounded-full object-cover ring-2 ring-white shadow-sm dark:ring-slate-900" loading="lazy" />
+                    <div>
+                      <p class="text-sm font-semibold">Claire L.</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">Consultante marketing</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="min-w-full p-7 sm:p-10">
+                  <div class="flex items-center gap-1 text-amber-400">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-700 dark:text-slate-200">
+                    “Le process est hyper clair, le design est soigné et la vitesse du site est excellente. C’est exactement ce que je voulais pour mon lancement.”
+                  </p>
+                  <div class="mt-6 flex items-center gap-3">
+                    <img src="https://i.pravatar.cc/80?img=58" alt="Photo de Mehdi R." class="h-10 w-10 rounded-full object-cover ring-2 ring-white shadow-sm dark:ring-slate-900" loading="lazy" />
+                    <div>
+                      <p class="text-sm font-semibold">Mehdi R.</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">Fondateur SaaS</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="min-w-full p-7 sm:p-10">
+                  <div class="flex items-center gap-1 text-amber-400">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-700 dark:text-slate-200">
+                    “J’ai enfin une page cohérente avec mon positionnement. Le code est propre, la structure est nette et les CTA convertissent.”
+                  </p>
+                  <div class="mt-6 flex items-center gap-3">
+                    <img src="https://i.pravatar.cc/80?img=12" alt="Photo d'Amine D." class="h-10 w-10 rounded-full object-cover ring-2 ring-white shadow-sm dark:ring-slate-900" loading="lazy" />
+                    <div>
+                      <p class="text-sm font-semibold">Amine D.</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">Coach business</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <button id="testimonial-prev" aria-label="Avis précédent" class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white/90 p-2.5 text-slate-700 shadow-sm transition hover:border-brand-300 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-200">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="testimonial-next" aria-label="Avis suivant" class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white/90 p-2.5 text-slate-700 shadow-sm transition hover:border-brand-300 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-200">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <div id="testimonial-dots" class="mt-6 flex justify-center gap-2">
+              <button data-slide="0" class="h-2.5 w-7 rounded-full bg-brand-600" aria-label="Aller au témoignage 1"></button>
+              <button data-slide="1" class="h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700" aria-label="Aller au témoignage 2"></button>
+              <button data-slide="2" class="h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700" aria-label="Aller au témoignage 3"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="pb-16 pt-8 sm:pb-20">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="reveal grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card sm:p-8 lg:grid-cols-[1.05fr,1fr] lg:p-10 dark:border-slate-800 dark:bg-slate-900 opacity-0 translate-y-6 transition-all duration-700">
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-accent-600 p-7 text-white sm:p-8">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Travail de conception web" class="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay animate-[float_10s_ease-in-out_infinite]" loading="lazy" />
+              <div class="relative z-10">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-100">Call to action</p>
+                <h2 class="mt-3 font-display text-3xl font-extrabold leading-tight sm:text-4xl">Prêt(e) à lancer votre page ?</h2>
+                <p class="mt-4 max-w-md text-sm text-brand-100 sm:text-base">
+                  Décrivez votre besoin, votre objectif et votre délai. Je vous réponds sous 24h avec une proposition claire et actionnable.
+                </p>
+                <ul class="mt-6 space-y-3 text-sm text-brand-50">
+                  <li>• Réponse rapide et plan de travail précis</li>
+                  <li>• Design + développement dans la même boucle</li>
+                  <li>• Livraison prête à déployer</li>
+                </ul>
+              </div>
+            </div>
+
+            <form class="grid gap-5">
+              <div>
+                <label for="name" class="mb-2 block text-sm font-medium">Nom</label>
+                <input id="name" name="name" type="text" placeholder="Votre nom" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:border-slate-700 dark:bg-slate-950 dark:focus:ring-brand-900" />
+              </div>
+
+              <div>
+                <label for="email" class="mb-2 block text-sm font-medium">Email</label>
+                <input id="email" name="email" type="email" placeholder="vous@email.com" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:border-slate-700 dark:bg-slate-950 dark:focus:ring-brand-900" />
+              </div>
+
+              <div>
+                <label for="message" class="mb-2 block text-sm font-medium">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Objectif, audience, offre, délai..." required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:border-slate-700 dark:bg-slate-950 dark:focus:ring-brand-900"></textarea>
+              </div>
+
+              <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.01]">
+                Envoyer la demande
+              </button>
+
+              <p class="text-xs text-slate-500 dark:text-slate-400">En envoyant ce formulaire, vous acceptez d’être contacté(e) au sujet de votre projet.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white/80 dark:border-slate-800 dark:bg-slate-950/70">
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-8 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-accent-600 text-xs font-extrabold text-white">SW</span>
+          <span class="text-sm font-medium text-slate-600 dark:text-slate-300">Création de sites web rapides et élégants</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 text-sm">
+          <a href="#accueil" class="text-slate-500 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Accueil</a>
+          <a href="#services" class="text-slate-500 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Services</a>
+          <a href="#portfolio" class="text-slate-500 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Portfolio</a>
+          <a href="#contact" class="text-slate-500 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a>
+        </div>
+
+        <p class="text-sm text-slate-500 dark:text-slate-400">© <span id="year"></span> Souleyman Web Studio. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const themeButtons = document.querySelectorAll("[data-theme-toggle]");
+      const yearEl = document.getElementById("year");
+      const revealEls = document.querySelectorAll(".reveal");
+      const counterEls = document.querySelectorAll(".counter");
+
+      yearEl.textContent = new Date().getFullYear();
+
+      const syncThemeButtonLabels = () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        themeButtons.forEach((button) => {
+          button.textContent = isDark ? "Mode clair" : "Mode sombre";
+        });
+      };
+
+      syncThemeButtonLabels();
+
+      themeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const root = document.documentElement;
+          root.classList.toggle("dark");
+          localStorage.setItem("theme", root.classList.contains("dark") ? "dark" : "light");
+          syncThemeButtonLabels();
+        });
+      });
+
+      menuBtn.addEventListener("click", () => {
+        const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuBtn.setAttribute("aria-expanded", String(!isExpanded));
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("opacity-0", "translate-y-6");
+              entry.target.classList.add("opacity-100", "translate-y-0");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+
+      const animateCounter = (el) => {
+        const target = Number(el.dataset.target || 0);
+        const suffix = el.dataset.suffix || "";
+        const duration = 1200;
+        const startTime = performance.now();
+
+        const step = (currentTime) => {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const value = Math.floor(progress * target);
+          el.textContent = `${value}${suffix}`;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = `${target}${suffix}`;
+          }
+        };
+
+        requestAnimationFrame(step);
+      };
+
+      const counterObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !entry.target.dataset.counted) {
+              entry.target.dataset.counted = "true";
+              animateCounter(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+
+      counterEls.forEach((counter) => counterObserver.observe(counter));
+
+      const track = document.getElementById("testimonial-track");
+      const prevBtn = document.getElementById("testimonial-prev");
+      const nextBtn = document.getElementById("testimonial-next");
+      const dots = Array.from(document.querySelectorAll("#testimonial-dots button"));
+      const totalSlides = 3;
+      let currentSlide = 0;
+      let autoPlayTimer;
+
+      const updateDots = () => {
+        dots.forEach((dot, index) => {
+          const active = index === currentSlide;
+          dot.classList.toggle("w-7", active);
+          dot.classList.toggle("bg-brand-600", active);
+          dot.classList.toggle("w-2.5", !active);
+          dot.classList.toggle("bg-slate-300", !active);
+          dot.classList.toggle("dark:bg-slate-700", !active);
+        });
+      };
+
+      const goToSlide = (index) => {
+        currentSlide = (index + totalSlides) % totalSlides;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updateDots();
+      };
+
+      const startAutoPlay = () => {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = setInterval(() => goToSlide(currentSlide + 1), 4500);
+      };
+
+      const resetAutoPlay = () => {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+      };
+
+      prevBtn.addEventListener("click", () => {
+        goToSlide(currentSlide - 1);
+        resetAutoPlay();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        goToSlide(currentSlide + 1);
+        resetAutoPlay();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          goToSlide(index);
+          resetAutoPlay();
+        });
+      });
+
+      track.addEventListener("mouseenter", () => clearInterval(autoPlayTimer));
+      track.addEventListener("mouseleave", startAutoPlay);
+
+      goToSlide(0);
+      startAutoPlay();
+    </script>
+  </body>
+</html>
